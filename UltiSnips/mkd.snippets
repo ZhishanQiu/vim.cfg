@@ -1,0 +1,26 @@
+snippet blog "jekyll blog title" 
+---
+layout: post
+title: $1
+description: ""
+category: "$2"
+tags: [$3]
+---
+{% include JB/setup %}
+
+endsnippet
+
+snippet 1jp "一级标题跳转"
+* [${1:jump}](#$1)
+## <span id="$1">$1</span>
+endsnippet
+
+snippet 2jp "二级标题跳转"
+* [${1:jump}](#$1)
+### <span id="$1">$1</span>
+endsnippet
+
+snippet 3jp "三级标题跳转"
+* [${1:jump}](#$1)
+#### <span id="$1">$1</span>
+endsnippet
