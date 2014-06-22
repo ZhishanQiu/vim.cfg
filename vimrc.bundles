@@ -14,7 +14,6 @@ filetype off " required! turn off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-
 "################### 插件管理 ###################
 
 "使用Vundle来管理插件
@@ -23,7 +22,6 @@ call vundle#rc()
 " :BundleInstall!    update  更新
 " :BundleClean       remove plugin not in list 删除本地无用插件
 Bundle 'gmarik/vundle'
-
 
 "################### 基础 ######################
 

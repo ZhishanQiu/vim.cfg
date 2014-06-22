@@ -1,8 +1,9 @@
 "==========================================
-" Author:  wklken
-" Version: 7
-" Email: wklken@yeah.net
-" BlogPost: http://wklken.me
+" Author:  Junevimer
+" Fork From: wklken
+" Version: 2.0
+" Email: junevimer@gmail.com
+" BlogPost: www.junevimer.com
 " ReadMe: README.md
 " Last_modify: 2014-03-15
 " Sections:
@@ -29,7 +30,6 @@ let g:mapleader = ','
 
 " 开启语法高亮
 syntax on
-
 
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
