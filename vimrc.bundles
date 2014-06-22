@@ -1,12 +1,7 @@
-"==========================================
-" bundle 插件管理和配置项
-"==========================================
-"------------------------------------------- begin of configs --------------------------------------------
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => bundle 插件管理和配置项
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"################### 包依赖 #####################
-"package dependence:  ctags
-"python dependence:  pep8, pyflake
-"
 "非兼容vi模式。去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
 set nocompatible
 " configure Vundle
@@ -14,18 +9,27 @@ filetype off " required! turn off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"################### 插件管理 ###################
-
-"使用Vundle来管理插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 使用Vundle来管理插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim plugin bundle control, command model
 " :BundleInstall     install 安装配置的插件
 " :BundleInstall!    update  更新
 " :BundleClean       remove plugin not in list 删除本地无用插件
 Bundle 'gmarik/vundle'
 
-"################### 基础 ######################
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => 插件配置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" 多语言语法检查
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => a.vim 快速切换.h和.c文件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'a.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => syntastic  多语言语法检查
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/syntastic'
 let g:syntastic_error_symbol='>>'
 let g:syntastic_warning_symbol='>'
@@ -37,10 +41,9 @@ let g:syntastic_javascript_checkers = ['jsl', 'jshint']
 let g:syntastic_html_checkers=['tidy', 'jshint']
 highlight SyntasticErrorSign guifg=white guibg=black
 
-"################### 自动补全 ###################
-
-" 代码自动补全
-" 迄今为止用到的最好的自动VIM自动补全插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => YouCompleteMe  代码自动补全
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Valloric/YouCompleteMe'
 " youcompleteme  默认tab  s-tab 和自动补全冲突
 " let g:ycm_key_list_select_completion=['<c-n>']
@@ -65,6 +68,7 @@ if !empty(glob("~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_
     let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 endif
 
+"mapping
 nmap <leader>gd :YcmDiags<CR>
 nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>           " 跳转到申明处
 nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>            " 跳转到定义处
@@ -78,7 +82,9 @@ let g:ycm_filetype_blacklist = {
       \ 'gitcommit' : 1,
       \}
 
-" 代码片段快速插入
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ultisnips 代码片段快速插入
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'SirVer/ultisnips'
 " 代码片段资源,需要学习
 " Snippets are separated from the engine. Add this if you want them:
@@ -90,9 +96,28 @@ let g:UltiSnipsExpandTrigger="<C-E>"
 nmap ult :silent! :UltiSnipsEdit<CR>
 let g:UltiSnipsSnippetDirectories=["additional_snippets", 'UltiSnips']
 
-"################### 快速编码 ###################
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerdtree 目录导航
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'scrooloose/nerdtree'
+map tr :silent! NERDTreeToggle<CR> 
+let NERDTreeHighlightCursorline=1
+let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
+"let NERDTreeDirArrows=0
+"let g:netrw_home='~/bak'
+"close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
 
-" 快速注释
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tagbar 标签导航
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'majutsushi/tagbar'
+nmap tg :silent! :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => nerdcommenter 快速注释
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'scrooloose/nerdcommenter'
 map cc <leader>c<space>
 let NERDShutUp=1
@@ -101,15 +126,19 @@ let NERDCompactSexyComs=1 " 多行注释时样子更好看
 let NERD_c_alt_style=1
 let NERD_cpp_alt_style=1
 
-" 快速加入修改环绕字符
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-surround 快速加入修改环绕字符
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'tpope/vim-surround'
 
-"################### 快速移动 ###################
-
-"更高效的移动 [,, + w/fx]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-easymotion 高效移动
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Lokaltog/vim-easymotion'
 
-" 多光标选中编辑
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-multiple-cursors 多光标选中编辑
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
@@ -118,9 +147,9 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-"################### 功能相关 ###################
-
-" 文件搜索
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ctrlp 文件搜索
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'kien/ctrlp.vim'
 " let g:ctrlp_map = '<leader>p'
 " let g:ctrlp_cmd = 'CtrlP'
@@ -137,36 +166,46 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
-" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-" git.  git操作还是习惯命令行,vim里面处理简单diff编辑操作
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => ack.vim 文件搜索
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Bundle 'ack.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-fugitive Git外包插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'tpope/vim-fugitive'
 " :Gdiff  :Gstatus :Gvsplit
 nnoremap <leader>ge :Gdiff<CR>
 
-" 同git diff,实时展示文件中修改的行
-" 只是不喜欢除了行号多一列, 默认关闭,gs时打开
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-gitgutter Git状态信息插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'airblade/vim-gitgutter'
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled = 1
 let g:gitgutter_highlight_lines = 1
 nnoremap <leader>gs :GitGutterToggle<CR>
 
-" edit history, 可以查看回到某个历史状态
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => gundo.vim 可以查看回到某个历史状态
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'sjl/gundo.vim'
 nnoremap gu :GundoToggle<CR>
 
-"################### 显示增强 ###################
-
-"状态栏增强展示
-set laststatus=2   " Always show the statusline
-" 老的powerline配置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-powerline 状态栏增强展示(vim-powerline和airline二选一)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Lokaltog/vim-powerline'
-" if want to use fancy,need to add font patch -> git clone git://gist.github.com/1630581.git ~/.fonts/ttf-dejavu-powerline
+set laststatus=2   " Always show the statusline
 set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set guifont=PowerlineSymbols\ for\ Powerline
 let g:Powerline_symbols = 'fancy'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-airline 状态栏增强展示
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-powerline symbols
 " Bundle 'bling/vim-airline'
 " set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
@@ -179,51 +218,18 @@ let g:Powerline_symbols = 'fancy'
 " let g:airline_readonly_symbol = '⭤'
 " let g:airline_linecolumn_prefix = '⭡'
 
-"################### 显示增强-主题 ###################"
-
-"主题 solarized
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => solarized 主题
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'altercation/vim-colors-solarized'
 "let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 let g:solarized_contrast="normal"
 let g:solarized_visibility="normal"
 
-"################### 快速导航 ###################
-"目录导航
-Bundle 'scrooloose/nerdtree'
-map tr :silent! NERDTreeToggle<CR> 
-let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '^\.svn$', '^\.hg$' ]
-"let NERDTreeDirArrows=0
-"let g:netrw_home='~/bak'
-"close vim if the only window left open is a NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | end
-
-"for minibufferexpl
-" Bundle 'fholgado/minibufexpl.vim'
-" let g:miniBufExplMapWindowNavVim = 1
-" let g:miniBufExplMapWindowNavArrows = 1
-" let g:miniBufExplMapCTabSwitchBufs = 1
-" let g:miniBufExplModSelTarget = 1
-" "解决FileExplorer窗口变小问题
-" let g:miniBufExplForceSyntaxEnable = 1
-" let g:miniBufExplorerMoreThanOne=2
-" let g:miniBufExplCycleArround=1
- 
-" " 默认方向键左右可以切换buffer
-" nnoremap <TAB> :MBEbn<CR>
-" noremap <leader>bn :MBEbn<CR>
-" noremap <leader>bp :MBEbp<CR>
-" noremap <leader>bd :MBEbd<CR>
-
-"标签导航
-Bundle 'majutsushi/tagbar'
-nmap tg :silent! :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-
-"###### Markdown #########
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-markdown Markdown语法高亮
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled=1
 
-Bundle 'a.vim'
-Bundle 'ack.vim'

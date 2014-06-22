@@ -1,4 +1,4 @@
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Author:  Junevimer
 " Fork From: wklken
 " Version: 2.0
@@ -17,12 +17,11 @@
 "       -> Theme Settings  主题设置
 "
 "       -> 插件配置和具体设置在vimrc.bundles中
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-"==========================================
-" Initial Plugin 加载插件
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Initial Plugin 加载插件
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 修改leader键
 let mapleader = ','
@@ -39,13 +38,11 @@ endif
 " ensure ftdetect et al work by including this after the Vundle stuff
 filetype plugin indent on
 
-"==========================================
-" General Settings 基础设置
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General Settings 基础设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "以下配置有详细说明，一些特性不喜欢可以直接注解掉
-
-"set guifont=Monaco:h20          " 字体 && 字号
 
 " history存储容量
 set history=2000
@@ -81,8 +78,8 @@ if v:version >= 730
 endif
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
-" 突出显示当前行等
-" set cursorcolumn
+" 突出显示当前行列
+" set cursorcolumn        " 突出显示当前列
 set cursorline          " 突出显示当前行
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
@@ -115,10 +112,10 @@ set magic
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
-"==========================================
-" Display Settings 展示/排版等界面格式设置
-"==========================================
-"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Display Settings 展示/排版等界面格式设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "显示当前的行号列号：
 set ruler
 ""在状态栏显示正在输入的命令
@@ -206,9 +203,9 @@ function! NumberToggle()
 endfunc
 nnoremap <C-n> :call NumberToggle()<cr>
 
-"==========================================
-" FileEncode Settings 文件编码,格式
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => FileEncode Settings 文件编码,格式
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 设置新文件的编码为 UTF-8
 set encoding=utf-8
 " 自动判断编码时，依次尝试以下编码：
@@ -228,9 +225,9 @@ set formatoptions+=m
 set formatoptions+=B
 
 
-"==========================================
-" others 其它设置
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => others 其它设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。
 autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 linux。
 
@@ -259,9 +256,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-"==========================================
-" HotKey Settings  自定义快捷键设置
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => HotKey Settings  自定义快捷键设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " 主要按键重定义
 
@@ -418,9 +415,9 @@ nnoremap U <C-r>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
-"==========================================
-" Theme Settings  主题设置
-"==========================================
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Theme Settings  主题设置
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -459,11 +456,11 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
-""""""""""ctags""""""""""
+"ctags
 set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
 " set tags+=/home/whz/workdir/dm365/pjproject-1.6/tags
 
-""""""""""cscopeverbose""""""""""
+"cscopeverbose
 set cscopetag
 set csto=0
 " cs add $HOME/workdir/dm365/dev_app/cscope.out $HOME/workdir/dm365/dev_app/
