@@ -312,223 +312,218 @@ solarized主题
 
 ####插件管理 [gmarik/vundle](https://github.com/gmarik/vundle)
 
-    必装,用于管理所有插件
-    命令行模式下管理命令:
+必装,用于管理所有插件
+命令行模式下管理命令:
 
-        :BundleInstall     install
-        :BundleInstall!    update
-        :BundleClean       remove plugin not in list
+    :BundleInstall     install
+    :BundleInstall!    update
+    :BundleClean       remove plugin not in list
 
 ####多语言语法检查 [scrooloose/syntastic](https://github.com/scrooloose/syntastic)
 
-    建议安装，静态语法及风格检查,支持多种语言
+建议安装，静态语法及风格检查,支持多种语言
 
-    修改了下标记一列的背景色,原有的背景色在solarized下太难看了…..
-
-    演示
-
-    ![syntastic](https://github.com/wklken/gallery/blob/master/vim/syntastic.png?raw=true)
+修改了下标记一列的背景色,原有的背景色在solarized下太难看了…..
+    
+![syntastic](https://github.com/wklken/gallery/blob/master/vim/syntastic.png?raw=true)
 
 ####代码自动补全 [Valloric/YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
-    必装，强烈推荐(YCM是我目前用到的最好的自动补全插件)
+必装，强烈推荐(YCM是我目前用到的最好的自动补全插件)
 
-    需要编译这个插件(见github文档)
+需要编译这个插件(见github文档)
 
-    这个需要自己去看官方的配置方式,演示在官方github有
+这个需要自己去看官方的配置方式,演示在官方github有
 
-    需要Vim 7.3.584 以上版本([如何编译vim](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source))
+需要Vim 7.3.584 以上版本([如何编译vim](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source))
 
-    这个插件包含了以下几个插件功能,所以不需要装下面:
+这个插件包含了以下几个插件功能,所以不需要装下面:
 
-        clang_complete
-        AutoComplPop
-        Supertab
-        neocomplcache
-        jedi(对python的补全)
+    clang_complete
+    AutoComplPop
+    Supertab
+    neocomplcache
+    jedi(对python的补全)
 
-    快捷键:
+快捷键:
 
-        ,gd  跳到声明位置, 仅 filetypes: c, cpp, objc, objcpp, python 有效
+    ,gd  跳到声明位置, 仅 filetypes: c, cpp, objc, objcpp, python 有效
 
 
-####代码片段快速插入 [SirVer/ultisnips](https://github.com/SirVer/ultisnips) +[honza/vim-snippets](https://github.com/honza/vim-snippets)
+####代码片段快速插入 [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
 
-    注意：如果是之前安装的k-vim，更新后发现报错，是ultisnips版本问题 执行:BundleUpdate即可
+必装，效率杀手锏，快速插入自定义的代码片段
 
-    必装，效率杀手锏，快速插入自定义的代码片段
+代码片段集合，有缺陷
 
-    代码片段集合，有缺陷
+自动补全加这个,高效必备, 针对各种语言已经带了一份配置了，可以到安装目录下查看具体，我有针对性补全一份，在snippets目录下，可自行修改
 
-    自动补全加这个,高效必备, 针对各种语言已经带了一份配置了，可以到安装目录下查看具体，我有针对性补全一份，在snippets目录下，可自行修改
+演示
 
-    演示
-
-    ![ultisnips](https://github.com/wklken/gallery/blob/master/vim/utilsnips.gif?raw=true)
+![ultisnips](https://github.com/wklken/gallery/blob/master/vim/utilsnips.gif?raw=true)
 
 ####快速注释 [scrooloose/nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
-    必装，另一个大大提升效率的地方，快速批量加减注释
+必装，另一个大大提升效率的地方，快速批量加减注释
 
-        [d] shift+v+方向键选中(默认当前行)
-            ->  ,cc  加上注释
-            -> ,cu 解开注释
+    [d] shift+v+方向键选中(默认当前行)
+        ->  ,cc  加上注释
+        -> ,cu 解开注释
 
-    演示
+演示
 
-    ![nerdcommenter](https://github.com/wklken/gallery/blob/master/vim/nerdcomment.gif?raw=true)
+![nerdcommenter](https://github.com/wklken/gallery/blob/master/vim/nerdcomment.gif?raw=true)
 
 
-    附:注释还有其他两种插件可选[tcomment](https://github.com/tomtom/tcomment_vim) 和[tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+附:注释还有其他两种插件可选[tcomment](https://github.com/tomtom/tcomment_vim) 和[tpope/vim-commentary](https://github.com/tpope/vim-commentary)
 
 
 ####快速编辑 [tpope/vim-surround](https://github.com/tpope/vim-surround) +[tpope/vim-repeat](https://github.com/tpope/vim-repeat)
 
-    必装，很给力的功能，快速给词加环绕符号,例如引号
+必装，很给力的功能，快速给词加环绕符号,例如引号
 
-    repeat进行增强,'.'可以重复命令
+repeat进行增强,'.'可以重复命令
 
-        [d]
-        cs"' [inside]
-        "Hello world!" -> 'Hello world!'
-        ds"
-        "Hello world!" -> Hello world!
-        ysiw"
-        Hello -> "Hello"
+    [d]
+    cs"' [inside]
+    "Hello world!" -> 'Hello world!'
+    ds"
+    "Hello world!" -> Hello world!
+    ysiw"
+    Hello -> "Hello"
 
-    演示
+演示
 
-    ![surround](https://github.com/wklken/gallery/blob/master/vim/surround.gif?raw=true)
+![surround](https://github.com/wklken/gallery/blob/master/vim/surround.gif?raw=true)
 
  ####位置跳转[Lokaltog/vim-easymotion](https://github.com/Lokaltog/vim-easymotion)
 
-    必装，效率提升杀手锏，跳转到光标后任意位置
+必装，效率提升杀手锏，跳转到光标后任意位置
 
-    配置(我的leader键配置 let g:mapleader = ',')
+配置(我的leader键配置 let g:mapleader = ',')
 
-        ,, + w  跳转
-        ,, + fe  查找'e',快速跳转定位到某个字符位置
+    ,, + w  跳转
+    ,, + fe  查找'e',快速跳转定位到某个字符位置
 
-    演示
+演示
 
-    ![easy_motion](https://github.com/wklken/gallery/blob/master/vim/easymotion.gif?raw=true)
+![easy_motion](https://github.com/wklken/gallery/blob/master/vim/easymotion.gif?raw=true)
 
 ####多光标选中编辑 [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
 
-    多光标批量操作
+多光标批量操作
 
-        [sd]
-        ctrl + n 开始选择
-        ctrl + p 向上取消
-        ctrl + x 跳过
-        esc   退出
+    [sd]
+    ctrl + n 开始选择
+    ctrl + p 向上取消
+    ctrl + x 跳过
+    esc   退出
 
-    演示(官方演示图)
+演示(官方演示图)
 
-    ![multiple-cursors](https://raw.github.com/terryma/vim-multiple-cursors/master/assets/example1.gif)
+![multiple-cursors](https://raw.github.com/terryma/vim-multiple-cursors/master/assets/example1.gif)
 
 ####搜索 [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
-    文件搜索,ack/Command-T需要依赖于外部包,不喜欢有太多依赖的,除非十分强大, 具体 [文档](http://kien.github.io/ctrlp.vim/)
+文件搜索,ack/Command-T需要依赖于外部包,不喜欢有太多依赖的,除非十分强大, 具体 [文档](http://kien.github.io/ctrlp.vim/)
 
-        [sd] ,p  打开ctrlp搜索
-        [sd] ,f  相当于mru功能，show recently opened files
+    [sd] ,p  打开ctrlp搜索
+    [sd] ,f  相当于mru功能，show recently opened files
 
-        ctrl + j/k 进行上下移动
-        ctrl + x/v 分屏打开该文件
-        ctrl + t   在新tab中打开该文件
+    ctrl + j/k 进行上下移动
+    ctrl + x/v 分屏打开该文件
+    ctrl + t   在新tab中打开该文件
 
-    演示
+演示
 
-    ![ctrip](https://github.com/wklken/gallery/blob/master/vim/ctrlp.gif?raw=true)
+![ctrip](https://github.com/wklken/gallery/blob/master/vim/ctrlp.gif?raw=true)
 
 ####git 常用操作 [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 
-    git插件, 编辑文件时进行一些diff操作,例如diff
+git插件, 编辑文件时进行一些diff操作,例如diff
 
-    不是很习惯,所以用的次数太少,目前和现有配置快捷键有冲突,尚未解决
+不是很习惯,所以用的次数太少,目前和现有配置快捷键有冲突,尚未解决
 
-        [sd]
-        ,ge   = git diff edit[gd被ycm占用了]
+    [sd]
+    ,ge   = git diff edit[gd被ycm占用了]
 
-    没有配置其他快捷键,可以参照github,自己增加修改映射
+没有配置其他快捷键,可以参照github,自己增加修改映射
 
 ####git状态 [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
-    git,在同一个文件内,通过标记和高亮,显示本次文件变更点
+git,在同一个文件内,通过标记和高亮,显示本次文件变更点
 
-        [sd]
-        ,gs   = show diff status [gd被ycm占用了]
+    [sd]
+    ,gs   = show diff status [gd被ycm占用了]
 
-    ![gitgutter](https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png)
+![gitgutter](https://raw.githubusercontent.com/airblade/vim-gitgutter/master/screenshot.png)
 
 ####文件时光机 [sjl/gundo.vim](https://github.com/sjl/gundo.vim)
 
-    编辑文件时光机
+编辑文件时光机
 
-        [sd] gu  查看文件编辑历史
+    [sd] gu  查看文件编辑历史
 
-    附:同类插件 [mbbill/undotree](https://github.com/mbbill/undotree)
+附:同类插件 [mbbill/undotree](https://github.com/mbbill/undotree)
 
 ####状态栏增强 [vim-powerline](https://github.com/Lokaltog/vim-powerline)
 
-    目前使用powerline, 可以用airline替换, airline的配置注释,需要的自行解开
+目前使用powerline, 可以用airline替换, airline的配置注释,需要的自行解开
 
-    演示
+演示
 
-    ![airline](https://camo.githubusercontent.com/63f9947cac196ec7e6e3d790fd3cd1e1463a7b9b/687474703a2f2f692e696d6775722e636f6d2f4d737549422e706e67)
+![powerline](https://camo.githubusercontent.com/63f9947cac196ec7e6e3d790fd3cd1e1463a7b9b/687474703a2f2f692e696d6775722e636f6d2f4d737549422e706e67)
 
 ####[altercation/vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
-   经典主题,目前我使用的,看起来舒服
+经典主题,目前我使用的,看起来舒服
 
 ####目录树 [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
 
-    必装,开启目录树导航
+必装,开启目录树导航
 
-        [sd]
-            ,n  打开 关闭树形目录结构
+    [sd]
+        tr  打开 关闭树形目录结构
 
-            在nerdtree窗口常用操作：(小写当前，大写root)
-            x.......收起当前目录树
-            X.......递归收起当前目录树
-            r.......刷新当前目录
-            R.......刷新根目录树
+        在nerdtree窗口常用操作：(小写当前，大写root)
+        x.......收起当前目录树
+        X.......递归收起当前目录树
+        r.......刷新当前目录
+        R.......刷新根目录树
 
-            p.......跳到当前节点的父节点
-            P.......跳到root节点
-            k/j.....上下移动
-            K.......到同目录第一个节点
-            J.......最后一个节点
+        p.......跳到当前节点的父节点
+        P.......跳到root节点
+        k/j.....上下移动
+        K.......到同目录第一个节点
+        J.......最后一个节点
 
-            o.......Open files, directories and bookmarks
-            i.......split上下分屏
-            s.......vsplit左右分屏
-            c.......将当前目录设为根节点
-            q.......关闭
+        o.......Open files, directories and bookmarks
+        i.......split上下分屏
+        s.......vsplit左右分屏
+        c.......将当前目录设为根节点
+        q.......关闭
 
+演示
 
-    演示
-
-    ![thenerdtree](https://github.com/wklken/gallery/blob/master/vim/thenerdtree.gif?raw=true)
+![thenerdtree](https://github.com/wklken/gallery/blob/master/vim/thenerdtree.gif?raw=true)
 
 ####Tag [majutsushi/tagbar](https://github.com/majutsushi/tagbar)
 
-    必装,标签导航,纬度和taglist不同, taglist的替代者
+必装,标签导航,纬度和taglist不同, taglist的替代者
 
-    注意:之前版本有装taglist,决定用tagbar替代,taglist的配置注解未删除,需要的自行打开
+注意:之前版本有装taglist,决定用tagbar替代,taglist的配置注解未删除,需要的自行打开
 
-         [sd] tg 打开
+     [sd] tg 打开
 
-    演示
+演示
 
-    ![tagbar](https://github.com/wklken/gallery/blob/master/vim/tagbar.gif?raw=true)
+![tagbar](https://github.com/wklken/gallery/blob/master/vim/tagbar.gif?raw=true)
 
 ####Markdown
 
-    [plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
+[plasticboy/vim-markdown](https://github.com/plasticboy/vim-markdown)
 
-    markdown语法,编辑md文件
+markdown语法,编辑md文件
 
 ### Inspire
 
