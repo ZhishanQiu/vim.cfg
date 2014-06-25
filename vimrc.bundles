@@ -175,17 +175,17 @@ Bundle 'ack.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-fugitive Git外包插件
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'tpope/vim-fugitive'
-" :Gdiff  :Gstatus :Gvsplit
-nnoremap <leader>ge :Gdiff<CR>
+" Bundle 'tpope/vim-fugitive'
+" " :Gdiff  :Gstatus :Gvsplit
+" nnoremap <leader>ge :Gdiff<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-gitgutter Git状态信息插件
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'airblade/vim-gitgutter'
-let g:gitgutter_enabled = 1
-let g:gitgutter_highlight_lines = 1
-nnoremap <leader>gs :GitGutterToggle<CR>
+" Bundle 'airblade/vim-gitgutter'
+" let g:gitgutter_enabled = 1
+" let g:gitgutter_highlight_lines = 1
+" nnoremap <leader>gs :GitGutterToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => gundo.vim 可以查看回到某个历史状态
@@ -197,10 +197,9 @@ nnoremap gu :GundoToggle<CR>
 " => vim-powerline 状态栏增强展示(vim-powerline和airline二选一)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Bundle 'Lokaltog/vim-powerline'
-set laststatus=2   " Always show the statusline
 set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
 set encoding=utf-8 " Necessary to show Unicode glyphs
-set guifont=PowerlineSymbols\ for\ Powerline
+" set guifont=PowerlineSymbols\ for\ Powerline
 let g:Powerline_symbols = 'fancy'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""

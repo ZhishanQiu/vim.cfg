@@ -84,15 +84,15 @@ set cursorline          " 突出显示当前行
 
 "设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制
 "好处：误删什么的，如果以前屏幕打开，可以找回
-set t_ti= t_te=
+" set t_ti= t_te=
 
 "- 则点击光标不会换,用于复制
 set mouse-=a             " 鼠标暂不启用, 键盘党....
 
 " 修复ctrl+m 多光标操作选择的bug，但是改变了ctrl+v进行字符选中时将包含光标下的字符
 "set selection=exclusive
-set selection=inclusive
-set selectmode=mouse,key
+" set selection=inclusive
+" set selectmode=mouse,key
 
 " No annoying sound on errors
 " 去掉输入错误的提示声音
@@ -103,7 +103,7 @@ set t_vb=
 set tm=500
 
 " Remember info about open buffers on close"
-set viminfo^=%
+" set viminfo^=%
 
 " For regular expressions turn magic on
 set magic
@@ -131,7 +131,7 @@ set scrolloff=7
 " 命令行（在状态行下）的高度，默认为1，这里是2
 " set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
 " Always show the status line - use 2 lines for the status bar
-" set laststatus=2
+set laststatus=2
 
 "显示行号：
 set number
@@ -162,11 +162,10 @@ set foldenable
 " syntax    使用语法定义折叠
 " diff      对没有更改的文本进行折叠
 " marker    使用标记进行折叠, 默认标记是 {{{ 和 }}}
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevel=99
 
 " 缩进配置
-
 set smartindent   " Smart indent
 set autoindent    " 打开自动缩进
 " never add copyindent, case error   " copy the previous indentation on autoindenting
@@ -185,12 +184,13 @@ set wildmode=list:longest
 set ttyfast
 
 " 00x增减数字时使用十进制
-set nrformats=
+" set nrformats=
 
 " 相对行号      行号变成相对，可以用 nj  nk   进行跳转 5j   5k 上下跳5行
 set relativenumber number
 au FocusLost * :set norelativenumber number
 au FocusGained * :set relativenumber
+
 " 插入模式下用绝对行号, 普通模式下用相对
 autocmd InsertEnter * :set norelativenumber number
 autocmd InsertLeave * :set relativenumber
@@ -228,7 +228,7 @@ set formatoptions+=B
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => others 其它设置
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。
+" autocmd! bufwritepost _vimrc source % " vimrc文件修改之后自动加载。 windows。
 autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 linux。
 
 " 自动补全配置
@@ -327,10 +327,10 @@ nnoremap ; :
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
-cnoremap <C-j> <t_kd>
-cnoremap <C-k> <t_ku>
-cnoremap <C-a> <Home>
-cnoremap <C-e> <End>
+" cnoremap <C-j> <t_kd>
+" cnoremap <C-k> <t_ku>
+" cnoremap <C-a> <Home>
+" cnoremap <C-e> <End>
 
 " 搜索相关
 
@@ -379,7 +379,7 @@ vnoremap > >gv
 map Y y$
 
 " select all
-map <Leader>sa ggVG"
+map <C-E> ggVG"
 
 " select block
 nnoremap <leader>v V`}
@@ -393,7 +393,6 @@ cmap w!! w !sudo tee >/dev/null %
 " 滚动Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
-
 
 "Jump to start and end of line using the home row keys
 nmap t o<ESC>k
@@ -438,23 +437,20 @@ set background=dark
 colorscheme solarized
 set t_Co=256
 
-"colorscheme molokai
-"colorscheme desert
-
 "设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
 hi! link ShowMarksHLl DiffAdd
 hi! link ShowMarksHLu DiffChange
 
 "" for error highlight，防止错误整行标红导致看不清
-highlight clear SpellBad
-highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
-highlight clear SpellCap
-highlight SpellCap term=underline cterm=underline
-highlight clear SpellRare
-highlight SpellRare term=underline cterm=underline
-highlight clear SpellLocal
-highlight SpellLocal term=underline cterm=underline
+" highlight clear SpellBad
+" highlight SpellBad term=standout ctermfg=1 term=underline cterm=underline
+" highlight clear SpellCap
+" highlight SpellCap term=underline cterm=underline
+" highlight clear SpellRare
+" highlight SpellRare term=underline cterm=underline
+" highlight clear SpellLocal
+" highlight SpellLocal term=underline cterm=underline
 
 "ctags
 set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
