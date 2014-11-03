@@ -420,7 +420,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=Monaco:h14
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h14
     set guioptions-=T
     set guioptions+=e
     set guioptions-=r
