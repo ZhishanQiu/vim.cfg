@@ -175,7 +175,7 @@ Bundle 'ack.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-fugitive Git外包插件
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 " " :Gdiff  :Gstatus :Gvsplit
 " nnoremap <leader>ge :Gdiff<CR>
 
@@ -196,26 +196,20 @@ nnoremap gu :GundoToggle<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-powerline 状态栏增强展示(vim-powerline和airline二选一)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Bundle 'Lokaltog/vim-powerline'
-set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
-set encoding=utf-8 " Necessary to show Unicode glyphs
+" Bundle 'Lokaltog/vim-powerline'
+" set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
+" set encoding=utf-8 " Necessary to show Unicode glyphs
 " set guifont=PowerlineSymbols\ for\ Powerline
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vim-airline 状态栏增强展示
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-powerline symbols
-" Bundle 'bling/vim-airline'
-" set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
-" set encoding=utf-8 " Necessary to show Unicode glyphs
-" let g:airline_left_sep = '⮀'
-" let g:airline_left_alt_sep = '⮁'
-" let g:airline_right_sep = '⮂'
-" let g:airline_right_alt_sep = '⮃'
-" let g:airline_fugitive_prefix = '⭠'
-" let g:airline_readonly_symbol = '⭤'
-" let g:airline_linecolumn_prefix = '⭡'
+Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+set t_Co=256       " Explicitly tell Vim that the terminal supports 256 colors
+set encoding=utf-8 " Necessary to show Unicode glyphs
+let g:airline_theme="solarized"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => solarized 主题

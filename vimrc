@@ -420,7 +420,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guifont=Monaco:h14
+    set guifont=DejaVu\ San\ Mono \for\ Powerline:h14
     set guioptions-=T
     set guioptions+=e
     set guioptions-=r
@@ -453,7 +453,7 @@ hi! link ShowMarksHLu DiffChange
 " highlight SpellLocal term=underline cterm=underline
 
 "ctags
-set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
+" set tags+=$HOME/workdir/dvsdk_2_10_01_18/dmai_1_21_00_10/tags
 " set tags+=/home/whz/workdir/dm365/pjproject-1.6/tags
 
 "cscopeverbose
